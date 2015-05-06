@@ -7,6 +7,7 @@
 ## Control File
 # set model parameters
 setwd("c:/Users/owashi/Documents/UCSB/SFG/Galapagos/Data/Galapagos-MSP-master")
+maps <- data.frame()
 datafolder <- "DATAFOLDER"
 propfolder <- "PROPOSALS"
 output <- "MSP RESULTS 2"
@@ -68,7 +69,7 @@ maps$distancetoshore <- apply(read.csv(paste(mapfolder, "/distance_land.csv", se
 maps$KrigedTourism <- apply(read.csv(paste(mapfolder, "/tourism_visits_kriging.csv", sep="")), 1, rev)  # kriged tourism data
 maps$MacroZones <- apply(read.csv(paste(mapfolder, "/macrozones.csv", sep="")), 1, rev)  # kriged tourism data
 
-data <- maps$fieldnames  # pull out names of each data layer
+data <- names(maps)  # pull out names of each data layer
 
 
 IslandLocations <- maps.isls
