@@ -34,7 +34,7 @@ mapfolder <- paste("MAPFOLDER", as.character(scale))  # NOT SURE ABOUT THIS
 # 3. all kinds of data
 
 # use this section to individually pull in and name each layer. Pain in the ass but clearer
-#setwd("c:/Users/owashi/Documents/UCSB/SFG/Galapagos/Data/Galapagos-MSP-master/MAPFOLDER 500")
+#setwd("c:/Users/owashi/Documents/UCSB/SFG/Galapagos/Data/Galapagos-MSP-master")
 maps$blayer <- apply(read.csv(paste(mapfolder, "/basemap.csv", sep="")), 1, rev)  # baselayer of islands and ocean
 maps$isls <- apply(read.csv(paste(mapfolder, "/islands.csv", sep="")), 1, rev)  # baselayer of islands and ocean
 maps$bzones <- apply(read.csv(paste(mapfolder, "/rmg_zones_2006.csv", sep="")), 1, rev)  # current zoning scheme
@@ -48,7 +48,7 @@ maps$lobland <- apply(read.csv(paste(mapfolder, "/lobster_2008_catch_kriging.csv
 maps$lobfish <- apply(read.csv(paste(mapfolder, "/lobster_2008_effort_kriging.csv", sep="")), 1, rev)  # lobster effort (diver days)
 maps$lobcpue <- apply(read.csv(paste(mapfolder, "/lobster_2008_mdcpue_kriging.csv", sep="")), 1, rev)  # lobster CPUE (lobster per diver hours)
 # maps$lobcpue <- apply(read.csv(paste(mapfolder, "/lobster2008mediancpue.csv", sep="")), 1, rev)  # lobster CPUE (lobster per diver hours)
-# maps.lobland <- apply(read.csv(paste(mapfolder, "/lobster2008catch.csv", sep="")), 1, rev)  # lobster catch (#s)
+# maps$lobland <- apply(read.csv(paste(mapfolder, "/lobster2008catch.csv", sep="")), 1, rev)  # lobster catch (#s)
 # maps$lobfish <- apply(read.csv(paste(mapfolder, "/lobster2008effort.csv", sep="")), 1, rev)  # lobster effort (diver days)
 maps$pepland <- apply(read.csv(paste(mapfolder, "/pepino_2008_catch_kriging.csv", sep="")), 1, rev)  # pepino catch (#s)
 maps$pepfish <- apply(read.csv(paste(mapfolder, "/pepino_2008_effort_kriging.csv", sep="")), 1, rev)  # pepino diver hours)
@@ -72,11 +72,11 @@ maps$MacroZones <- apply(read.csv(paste(mapfolder, "/macrozones.csv", sep="")), 
 data <- names(maps)  # pull out names of each data layer
 
 
-IslandLocations <- maps.isls
+IslandLocations <- maps$isls
 IslandLocations[IslandLocation==-9999)] = NaN
 IslandLocations[isnan(IslandLocations)==0] = 0  # ISNAN HAS TO BE REPLACED WITH R FUNCTION THAT PUTS NaN VALUES IN AN ARRAY
 
-mstack <- NaN[dim(maps.blayer,1),dim(maps.blayer,2), length(data)]  # create empty array to stack maps for easy manipulation
+mstack <- NaN[dim(maps$blayer,1),dim(maps$blayer,2), length(data)]  # create empty array to stack maps for easy manipulation
 # fill in mstack with appropriate data
 for d=1:length(data)
 	
