@@ -23,7 +23,7 @@ propnumbs <- 1  # which proposals to evaluate
 noisl <- 1 # set this to 1 to knock out all islands
 setdistance <- 0.08  # set this to the distance from shore that you want to include in the model, set to -1 to include all
 
-mapfolder <- paste("MAPFOLDER", as.character(scale))  # NOT SURE ABOUT THIS
+mapfolder <- paste("MAPFOLDER", as.character(scale))
 
 
 
