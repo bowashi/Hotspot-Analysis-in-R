@@ -69,7 +69,42 @@ distancetoshore <- apply(read.csv(paste(mapfolder, "/distance_land.csv", sep="")
 KrigedTourism <- apply(read.csv(paste(mapfolder, "/tourism_visits_kriging.csv", sep="")), 1, rev)  # kriged tourism data
 MacroZones <- apply(read.csv(paste(mapfolder, "/macrozones.csv", sep="")), 1, rev)  # kriged tourism data
 
-maps <- data.frame(c(blayer, isls))
+#maps$blayer <- apply(read.csv(paste(mapfolder, "/basemap.csv", sep="")), 1, rev)  # baselayer of islands and ocean
+#maps$isls <- apply(read.csv(paste(mapfolder, "/islands.csv", sep="")), 1, rev)  # baselayer of islands and ocean
+#maps$bzones <- apply(read.csv(paste(mapfolder, "/rmg_zones_2006.csv", sep="")), 1, rev)  # current zoning scheme
+#maps$tvisit <- apply(read.csv(paste(mapfolder, "/tourism_visits.csv", sep="")), 1, rev)  # tourist visits
+#maps$upwell <- apply(read.csv(paste(mapfolder, "/upwelling.csv", sep="")), 1, rev)  # upwelling
+#maps$sstmin <- apply(read.csv(paste(mapfolder, "/sst_2003_2008_min.csv", sep="")), 1, rev)  # min SST
+#maps$sstmax <- apply(read.csv(paste(mapfolder, "/sst_2003_2008_max.csv", sep="")), 1, rev)  # max SST
+#maps$sstmean <- apply(read.csv(paste(mapfolder, "/sst_2003_2008_avg.csv", sep="")), 1, rev)  # mean SST
+#maps$sstsdv <- apply(read.csv(paste(mapfolder, "/sst_2003_2008_stdev.csv", sep="")), 1, rev)  # stdev of SST
+#maps$lobland <- apply(read.csv(paste(mapfolder, "/lobster_2008_catch_kriging.csv", sep="")), 1, rev)  # lobster catch (#'s)
+#maps$lobfish <- apply(read.csv(paste(mapfolder, "/lobster_2008_effort_kriging.csv", sep="")), 1, rev)  # lobster effort (diver days)
+#maps$lobcpue <- apply(read.csv(paste(mapfolder, "/lobster_2008_mdcpue_kriging.csv", sep="")), 1, rev)  # lobster CPUE (lobster per diver hours)
+# maps$lobcpue <- apply(read.csv(paste(mapfolder, "/lobster2008mediancpue.csv", sep="")), 1, rev)  # lobster CPUE (lobster per diver hours)
+# maps$lobland <- apply(read.csv(paste(mapfolder, "/lobster2008catch.csv", sep="")), 1, rev)  # lobster catch (#s)
+# maps$lobfish <- apply(read.csv(paste(mapfolder, "/lobster2008effort.csv", sep="")), 1, rev)  # lobster effort (diver days)
+#maps$pepland <- apply(read.csv(paste(mapfolder, "/pepino_2008_catch_kriging.csv", sep="")), 1, rev)  # pepino catch (#s)
+#maps$pepfish <- apply(read.csv(paste(mapfolder, "/pepino_2008_effort_kriging.csv", sep="")), 1, rev)  # pepino diver hours)
+#maps$pepcpue <- apply(read.csv(paste(mapfolder, "/pepino_2008_mdcpue_kriging.csv", sep="")), 1, rev)  # median pepino/diver hours
+
+#maps$turtles <- apply(read.csv(paste(mapfolder, "/turtle_nests.csv", sep="")), 1, rev)  # sea turtle nesting sites
+#maps$fondos <- apply(read.csv(paste(mapfolder, "/fondos.csv", sep="")), 1, rev)  # bottom habitat types
+#maps$chloro <- apply(read.csv(paste(mapfolder, "/chl_a_avg_krig.csv", sep="")), 1, rev)  # average chlorophyll production
+#maps$endemic <- apply(read.csv(paste(mapfolder, "/endemic_galapagos_species_richness.csv", sep="")), 1, rev)  # endemic species richness
+#maps$indo_species <- apply(read.csv(paste(mapfolder, "/indo_pacific_species_richness.csv", sep="")), 1, rev)  # indo pacific species richness
+#maps$norsubtrop_species <- apply(read.csv(paste(mapfolder, "/northern_sub_tropical_species_richness.csv", sep="")), 1, rev)  # northern subtropical species richness
+#maps$nortemp_species <- apply(read.csv(paste(mapfolder, "/northern_temperate_species_richness.csv", sep="")), 1, rev)  # northern temperate species richness
+#maps$sousubtrop_species <- apply(read.csv(paste(mapfolder, "/southern_sub_tropical_species_richness.csv", sep="")), 1, rev)  # southern temperate species richness
+#maps$soutemp_species <- apply(read.csv(paste(mapfolder, "/southern_temperate_species_richness.csv", sep="")), 1, rev)  # southern temperate species richness
+#maps$all_species <- apply(read.csv(paste(mapfolder, "/total_species_richness.csv", sep="")), 1, rev)  # all species richness
+#maps$tropic_species <- apply(read.csv(paste(mapfolder, "/tropical_species_richness.csv", sep="")), 1, rev)  # tropical species richness
+#maps$distancetoshore <- apply(read.csv(paste(mapfolder, "/distance_land.csv", sep="")), 1, rev)  # distance to shore
+#maps$KrigedTourism <- apply(read.csv(paste(mapfolder, "/tourism_visits_kriging.csv", sep="")), 1, rev)  # kriged tourism data
+#maps$MacroZones <- apply(read.csv(paste(mapfolder, "/macrozones.csv", sep="")), 1, rev)  # kriged tourism data
+
+maps <- data.frame(blayer, isls, bzones, tvisit, upwell, sstmin, sstmax, sstmean, sstsdv, lobland, lobfish,lobcpue, pepland, pepfish, pepcpue, turtles, fondos, chloro, endemic, indo_species, norsubtrop_species, nortemp_species, sousubtrop_species, soutemp_species, all_species, tropic_species, distancetoshore, KrigedTourism, MacroZones)
+
 
 
 
@@ -78,54 +113,6 @@ data <- names(maps)  # pull out names of each data layer
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-maps$blayer <- apply(read.csv(paste(mapfolder, "/basemap.csv", sep="")), 1, rev)  # baselayer of islands and ocean
-maps$isls <- apply(read.csv(paste(mapfolder, "/islands.csv", sep="")), 1, rev)  # baselayer of islands and ocean
-maps$bzones <- apply(read.csv(paste(mapfolder, "/rmg_zones_2006.csv", sep="")), 1, rev)  # current zoning scheme
-maps$tvisit <- apply(read.csv(paste(mapfolder, "/tourism_visits.csv", sep="")), 1, rev)  # tourist visits
-maps$upwell <- apply(read.csv(paste(mapfolder, "/upwelling.csv", sep="")), 1, rev)  # upwelling
-maps$sstmin <- apply(read.csv(paste(mapfolder, "/sst_2003_2008_min.csv", sep="")), 1, rev)  # min SST
-maps$sstmax <- apply(read.csv(paste(mapfolder, "/sst_2003_2008_max.csv", sep="")), 1, rev)  # max SST
-maps$sstmean <- apply(read.csv(paste(mapfolder, "/sst_2003_2008_avg.csv", sep="")), 1, rev)  # mean SST
-maps$sstsdv <- apply(read.csv(paste(mapfolder, "/sst_2003_2008_stdev.csv", sep="")), 1, rev)  # stdev of SST
-maps$lobland <- apply(read.csv(paste(mapfolder, "/lobster_2008_catch_kriging.csv", sep="")), 1, rev)  # lobster catch (#'s)
-maps$lobfish <- apply(read.csv(paste(mapfolder, "/lobster_2008_effort_kriging.csv", sep="")), 1, rev)  # lobster effort (diver days)
-maps$lobcpue <- apply(read.csv(paste(mapfolder, "/lobster_2008_mdcpue_kriging.csv", sep="")), 1, rev)  # lobster CPUE (lobster per diver hours)
-# maps$lobcpue <- apply(read.csv(paste(mapfolder, "/lobster2008mediancpue.csv", sep="")), 1, rev)  # lobster CPUE (lobster per diver hours)
-# maps$lobland <- apply(read.csv(paste(mapfolder, "/lobster2008catch.csv", sep="")), 1, rev)  # lobster catch (#s)
-# maps$lobfish <- apply(read.csv(paste(mapfolder, "/lobster2008effort.csv", sep="")), 1, rev)  # lobster effort (diver days)
-maps$pepland <- apply(read.csv(paste(mapfolder, "/pepino_2008_catch_kriging.csv", sep="")), 1, rev)  # pepino catch (#s)
-maps$pepfish <- apply(read.csv(paste(mapfolder, "/pepino_2008_effort_kriging.csv", sep="")), 1, rev)  # pepino diver hours)
-maps$pepcpue <- apply(read.csv(paste(mapfolder, "/pepino_2008_mdcpue_kriging.csv", sep="")), 1, rev)  # median pepino/diver hours
-
-maps$turtles <- apply(read.csv(paste(mapfolder, "/turtle_nests.csv", sep="")), 1, rev)  # sea turtle nesting sites
-maps$fondos <- apply(read.csv(paste(mapfolder, "/fondos.csv", sep="")), 1, rev)  # bottom habitat types
-maps$chloro <- apply(read.csv(paste(mapfolder, "/chl_a_avg_krig.csv", sep="")), 1, rev)  # average chlorophyll production
-maps$endemic <- apply(read.csv(paste(mapfolder, "/endemic_galapagos_species_richness.csv", sep="")), 1, rev)  # endemic species richness
-maps$indo_species <- apply(read.csv(paste(mapfolder, "/indo_pacific_species_richness.csv", sep="")), 1, rev)  # indo pacific species richness
-maps$norsubtrop_species <- apply(read.csv(paste(mapfolder, "/northern_sub_tropical_species_richness.csv", sep="")), 1, rev)  # northern subtropical species richness
-maps$nortemp_species <- apply(read.csv(paste(mapfolder, "/northern_temperate_species_richness.csv", sep="")), 1, rev)  # northern temperate species richness
-maps$sousubtrop_species <- apply(read.csv(paste(mapfolder, "/southern_sub_tropical_species_richness.csv", sep="")), 1, rev)  # southern temperate species richness
-maps$soutemp_species <- apply(read.csv(paste(mapfolder, "/southern_temperate_species_richness.csv", sep="")), 1, rev)  # southern temperate species richness
-maps$all_species <- apply(read.csv(paste(mapfolder, "/total_species_richness.csv", sep="")), 1, rev)  # all species richness
-maps$tropic_species <- apply(read.csv(paste(mapfolder, "/tropical_species_richness.csv", sep="")), 1, rev)  # tropical species richness
-maps$distancetoshore <- apply(read.csv(paste(mapfolder, "/distance_land.csv", sep="")), 1, rev)  # distance to shore
-maps$KrigedTourism <- apply(read.csv(paste(mapfolder, "/tourism_visits_kriging.csv", sep="")), 1, rev)  # kriged tourism data
-maps$MacroZones <- apply(read.csv(paste(mapfolder, "/macrozones.csv", sep="")), 1, rev)  # kriged tourism data
 
 data <- names(maps)  # pull out names of each data layer
 
