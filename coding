@@ -61,7 +61,7 @@ maps.indo_species <- apply(read.csv(paste(mapfolder, "/indo_pacific_species_rich
 maps.norsubtrop_species <- apply(read.csv(paste(mapfolder, "/northern_sub_tropical_species_richness.csv", sep="")), 1, rev)  # northern subtropical species richness
 maps.nortemp_species <- apply(read.csv(paste(mapfolder, "/northern_temperate_species_richness.csv", sep="")), 1, rev)  # northern temperate species richness
 maps.sousubtrop_species <- apply(read.csv(paste(mapfolder, "/southern_sub_tropical_species_richness.csv", sep="")), 1, rev)  # southern temperate species richness
-maps.soutemp_species <- apply(read.csv(paste(mapfolder, "/southern_temperate_species_richness.csv", sep=""), 1, rev)  # southern temperate species richness
+maps.soutemp_species <- apply(read.csv(paste(mapfolder, "/southern_temperate_species_richness.csv", sep="")), 1, rev)  # southern temperate species richness
 maps.all_species <- apply(read.csv(paste(mapfolder, "/total_species_richness.csv", sep="")), 1, rev)  # all species richness
 maps.tropic_species <- apply(read.csv(paste(mapfolder, "/tropical_species_richness.csv", sep="")), 1, rev)  # tropical species richness
 maps.distancetoshore <- apply(read.csv(paste(mapfolder, "/distance_land.csv", sep="")), 1, rev)  # distance to shore
