@@ -2,7 +2,7 @@
 # Hotspot/Coldspot Analysis converted from MatLab
 
 ## Load Packages
-require(raster)
+
 
 ## Control File
 # set model parameters
