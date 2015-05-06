@@ -58,15 +58,15 @@ maps.fondos <- apply(read.csv(paste(mapfolder, "/fondos.csv", sep="")), 1, rev) 
 maps.chloro <- apply(read.csv(paste(mapfolder, "/chl_a_avg_krig.csv", sep="")), 1, rev)  # average chlorophyll production
 maps.endemic <- apply(read.csv(paste(mapfolder, "/endemic_galapagos_species_richness.csv", sep="")), 1, rev)  # endemic species richness
 maps.indo_species <- apply(read.csv(paste(mapfolder, "/indo_pacific_species_richness.csv", sep="")), 1, rev)  # indo pacific species richness
-maps.norsubtrop_species <- apply(read.csv("northern_sub_tropical_species_richness.csv"), rev)  # northern subtropical species richness
-maps.nortemp_species <- apply(read.csv("northern_temperate_species_richness.csv"), rev)  # northern temperate species richness
-maps.sousubtrop_species <- apply(read.csv("southern_sub_tropical_species_richness.csv"), rev)  # southern temperate species richness
-maps.soutemp_species <- apply(read.csv("southern_temperate_species_richness.csv"), rev)  # southern temperate species richness
-maps.all_species <- apply(read.csv("total_species_richness.csv"), rev)  # all species richness
-maps.tropic_species <- apply(read.csv("tropical_species_richness.csv"), rev)  # tropical species richness
-maps.distancetoshore <- apply(read.csv("distance_land.csv"), rev)  # distance to shore
-maps.KrigedTourism <- apply(read.csv("tourism_visits_kriging.csv"), rev)  # kriged tourism data
-maps.MacroZones <- apply(read.csv("macrozones.csv"), rev)  # kriged tourism data
+maps.norsubtrop_species <- apply(read.csv(paste(mapfolder, "/northern_sub_tropical_species_richness.csv", sep="")), 1, rev)  # northern subtropical species richness
+maps.nortemp_species <- apply(read.csv(paste(mapfolder, "/northern_temperate_species_richness.csv", sep="")), 1, rev)  # northern temperate species richness
+maps.sousubtrop_species <- apply(read.csv(paste(mapfolder, "/southern_sub_tropical_species_richness.csv", sep="")), 1, rev)  # southern temperate species richness
+maps.soutemp_species <- apply(read.csv(paste(mapfolder, "/southern_temperate_species_richness.csv", sep=""), 1, rev)  # southern temperate species richness
+maps.all_species <- apply(read.csv(paste(mapfolder, "/total_species_richness.csv", sep="")), 1, rev)  # all species richness
+maps.tropic_species <- apply(read.csv(paste(mapfolder, "/tropical_species_richness.csv", sep="")), 1, rev)  # tropical species richness
+maps.distancetoshore <- apply(read.csv(paste(mapfolder, "/distance_land.csv", sep="")), 1, rev)  # distance to shore
+maps.KrigedTourism <- apply(read.csv(paste(mapfolder, "/tourism_visits_kriging.csv", sep="")), 1, rev)  # kriged tourism data
+maps.MacroZones <- apply(read.csv(paste(mapfolder, "/macrozones.csv", sep="")), 1, rev)  # kriged tourism data
 
 data <- maps$fieldnames  # pull out names of each data layer
 
