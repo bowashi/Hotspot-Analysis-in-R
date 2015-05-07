@@ -105,19 +105,13 @@ MacroZones <- apply(read.csv(paste(mapfolder, "/macrozones.csv", sep="")), 1, re
 
 maps <- data.frame(blayer, isls, bzones, tvisit, upwell, sstmin, sstmax, sstmean, sstsdv, lobland, lobfish,lobcpue, pepland, pepfish, pepcpue, turtles, fondos, chloro, endemic, indo_species, norsubtrop_species, nortemp_species, sousubtrop_species, soutemp_species, all_species, tropic_species, distancetoshore, KrigedTourism, MacroZones)
 
-
-
-
 data <- names(maps)  # pull out names of each data layer
 
+nameblayer <- names(blayer)
 
+mapnames <- data.frame(
 
-
-
-data <- names(maps)  # pull out names of each data layer
-
-
-IslandLocations <- maps$isls
+IslandLocations <- isls
 IslandLocations[IslandLocation==-9999)] = NaN
 IslandLocations[isnan(IslandLocations)==0] = 0  # ISNAN HAS TO BE REPLACED WITH R FUNCTION THAT PUTS NaN VALUES IN AN ARRAY
 
